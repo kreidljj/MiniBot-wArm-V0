@@ -105,13 +105,13 @@ public class RobotContainer {
 
                 new JoystickButton(driverJoystick, 2).whileTrue(new AutoChargingBalanceCmd(swerveSubsystem));
 
-                new JoystickButton(driverJoystick, ).onTrue(Commands.parallel(new ArmManipulatorDriveCmd(rotateSubsystem)));
+                new JoystickButton(secondaryJoystick,1 ).onTrue(Commands.parallel(new ArmManipulatorDriveCmd(rotateSubsystem)));
 
-                new JoystickButton(driverJoystick, ).onTrue(Commands.parallel(new ArmManipulatorIntakeCmd(rotateSubsystem)));
+                new JoystickButton(secondaryJoystick,4 ).onTrue(Commands.parallel(new ArmManipulatorIntakeCmd(rotateSubsystem)));
 
-                new JoystickButton(driverJoystick, ).whileTrue(new ArmIntakeInCmd(armSubsystem));
+                new JoystickButton(secondaryJoystick,3 ).whileTrue(new ArmIntakeInCmd(armSubsystem));
 
-                new JoystickButton(driverJoystick, ).whileTrue(new ArmIntakeOutCmd(armSubsystem));
+                new JoystickButton(secondaryJoystick,2 ).whileTrue(new ArmIntakeOutCmd(armSubsystem));
         }
 
         public Command getAutonomousCommand() {
